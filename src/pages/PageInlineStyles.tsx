@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { InlineResizeBox } from "../components/InlineResizeBox";
+import { FontSizeButton } from "../components/FontSizeButton";
 
 export const PageInlineStyles = () => {
 	const [isOnline, setIsOnline] = useState(true);
@@ -10,11 +11,12 @@ export const PageInlineStyles = () => {
 			<p style={{ color: isOnline ? "green" : "red" }}>
 				{isOnline ? "User is now online" : "User is now offline"}
 			</p>
-			<p style={{fontWeight: isOnline ? 'bold': 'normal'}}>
-				Hans Schmidt 
+			<p style={{ fontWeight: isOnline ? "bold" : "normal" }}>
+				Hans Schmidt
 			</p>
 
-			<InlineResizeBox/>
+			<InlineResizeBox />
+			<FontSizeButton />
 		</>
 	);
 };
