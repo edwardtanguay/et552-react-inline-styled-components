@@ -9,7 +9,7 @@ export const AppRouter = () => {
 			<Route path="/inline-styles" element={<PageInlineStyles />} />
 			<Route path="/styled-components" element={<PageStyledComponents />} />
 			<Route path="/about" element={<PageAbout />} />
-			<Route index element={<Navigate to="/inline-styles" replace />} />
+			<Route index element={<Navigate to="/about" replace />} />
 		</Routes>
 	);
 };
