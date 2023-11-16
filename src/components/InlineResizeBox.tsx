@@ -10,11 +10,11 @@ export const InlineResizeBox = () => {
 	const boxStyle = {
 		backgroundColor: "blue",
 		width: `${sliderValue}%`,
-		height: `${sliderValue}px`,
+		height: `100px`,
 	}
 
 	return (
-		<div style={{ height: '200px'}}>
+		<div>
 			<input
 				type="range"
 				min="1"
