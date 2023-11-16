@@ -10,17 +10,17 @@ export const InlineResizeBox = () => {
 	const boxStyle = {
 		backgroundColor: "blue",
 		width: `${sliderValue}%`,
-		height: '100px',
+		height: `${sliderValue}px`,
 	}
 
 	return (
-		<div>
+		<div style={{ height: '200px'}}>
 			<input
 				type="range"
 				min="1"
 				max="100"
 				value={sliderValue}
-				onChange={handleSliderChange}/>
+				onChange={(e) => handleSliderChange(e)}/>
 				<div style={boxStyle}></div>
 				<hr/> 
 				<p>Size: {sliderValue} €</p> 
