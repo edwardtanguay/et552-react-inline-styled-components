@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { InlineResizeBox } from "../components/InlineResizeBox";
 
 export const PageInlineStyles = () => {
 	const [isOnline, setIsOnline] = useState(true);
@@ -12,6 +13,8 @@ export const PageInlineStyles = () => {
 			<p style={{fontWeight: isOnline ? 'bold': 'normal'}}>
 				Hans Schmidt 
 			</p>
+
+			<InlineResizeBox/>
 		</>
 	);
 };
