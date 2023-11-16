@@ -1,22 +1,35 @@
-import styled from 'styled-components';
+import { useState } from "react";
+import styled from "styled-components";
 
-interface ITextDiv {
-	backColor: string;
-	border?: boolean;
+interface IOnlineText {
+	isOnline: boolean;
 }
 
 export const StyledOnlineToggle = () => {
+	const [isOnline, setIsOnline] = useState(false);
 
-	const TextDiv = styled.div<ITextDiv>`
-		background-color: ${(props) => (props.backColor ? props.backColor : 'black')};
-		height: 5rem;
-		width: 5rem;
-		border: ${(props) => (props.border ? '3px solid blue' : '')}
+	const ToggleOnlineButton = styled.button`
+		background-color: #64748b;
+		padding-right: 0.7rem;
+		padding-left: 0.7rem;
+		padding-top: 0.3rem;
+		padding-bottom: 0.5rem;
+		border-radius: 0.2rem;
+		cursor: pointer;
+	`;
+
+	const OnlineText = styled.p<IOnlineText>`
+		color: ${(props) => (props.isOnline ? "darkgreen" : "darkred")};
 	`;
 
 	return (
 		<>
-			<TextDiv border backColor="orchid" />
+			<ToggleOnlineButton onClick={() => setIsOnline(!isOnline)}>
+				Toggle
+			</ToggleOnlineButton>
+			<OnlineText isOnline={isOnline}>
+				User is now {isOnline ? "online" : "offline"}.
+			</OnlineText>
 		</>
-	)
-}
+	);
+};
