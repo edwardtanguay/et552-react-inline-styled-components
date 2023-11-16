@@ -5,6 +5,10 @@ interface IOnlineText {
 	isOnline: boolean;
 }
 
+interface IUserText {
+	isOnline: boolean;
+}
+
 export const StyledOnlineToggle = () => {
 	const [isOnline, setIsOnline] = useState(false);
 
@@ -22,6 +26,10 @@ export const StyledOnlineToggle = () => {
 		color: ${(props) => (props.isOnline ? "darkgreen" : "darkred")};
 	`;
 
+	const UserText = styled.p<IUserText>`
+		font-weight: ${(props) => (props.isOnline ? "bold" : "normal")};
+	`;
+
 	return (
 		<>
 			<ToggleOnlineButton onClick={() => setIsOnline(!isOnline)}>
@@ -30,6 +38,7 @@ export const StyledOnlineToggle = () => {
 			<OnlineText isOnline={isOnline}>
 				User is now {isOnline ? "online" : "offline"}.
 			</OnlineText>
+			<UserText isOnline={isOnline}>Hans Schmidt</UserText>
 		</>
 	);
 };
